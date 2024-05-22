@@ -1,4 +1,21 @@
 const passwordInput = document.querySelector('#password');
+const passwordIcon = document.querySelector('#input-icon')
+
+let visibility =  false;
+
+passwordIcon.addEventListener('click', function() {
+    let iconVisibility = visibility == true ? 'visibility_off' : 'visibility'
+    let spanIcon = passwordIcon.querySelector('span')
+
+    if (visibility == false ) {
+        passwordInput.type = 'text'
+    } else {
+        passwordInput.type = 'password'
+    }
+
+    spanIcon.innerHTML = iconVisibility
+    visibility = !visibility
+})
 
 passwordInput.addEventListener("input", function() {
 
